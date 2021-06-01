@@ -123,7 +123,7 @@ function App() {
 
   return (
     <>
-      <Router basename="/todo-stack">
+      <Router>
         <Header title={"ToDoStack"} searchBar={false} />
         <Switch>
           <Route exact path="/" render={() => {
