@@ -67,22 +67,6 @@ function App() {
     localStorage.setItem("todos", JSON.stringify(todos));
   };
 
-  // to add new todo
-  const addTodo = (title, desc) => {
-    let sno;
-    if (todos.length === 0) {
-      sno = 0;
-    } else {
-      sno = todos[todos.length - 1].sno + 1;
-    }
-    let myTodo = {
-      sno: sno,
-      title: title,
-      desc: desc,
-    };
-    setTodos([...todos, myTodo]);
-  };
-
   // to move todo from todo window to completed window
   const completedTodo = (todo) => {
     setCompleted([...completed, todo])
@@ -105,6 +89,21 @@ function App() {
     setTodos([...todos, todo]);
   }
 
+  // to add new todo
+  const addTodo = (desc) => {
+    let sno;
+    if (todos.length === 0) {
+      sno = 0;
+    } else {
+      sno = todos[todos.length - 1].sno + 1;
+    }
+    let myTodo = {
+      sno: sno,
+      desc: desc,
+    };
+    setTodos([...todos, myTodo]);
+  };
+
   // state defined for all the todos
   const [todos, setTodos] = useState(initTodo);
 
@@ -124,7 +123,7 @@ function App() {
   return (
     <>
       <Router>
-        <Header title={"ToDoStack"} searchBar={false} />
+        <Header />
         <Switch>
           <Route exact path="/" render={() => {
             return (

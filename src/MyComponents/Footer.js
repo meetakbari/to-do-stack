@@ -9,7 +9,7 @@ function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary">
             {'Copyright © '}
-            <Link color="inherit" href="https://github.com/meetakbari/todo-stack">
+            <Link color="inherit" href="https://github.com/meetakbari/to-do-stack">
                 ToDoStack
       </Link>{' '}
             {new Date().getFullYear()}

@@ -6,12 +6,12 @@ import {makeStyles} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     Navbar: {
-      marginTop: '10px',
+      marginTop: '30px',
       display: 'flex',
       justifyContent: 'center'
     },
     NavItem: {
-        width: '30%',
+        width: '33%',
         textAlign: 'center',
     },
   }));
@@ -26,8 +26,10 @@ const Dashboard = (props) => {
   }
 
   useEffect(() => {
-      history.push('/todos');
-  }, [activeTab === 1]); //When the page is refreshed, Todos component will be loaded
+      if(activeTab === 1){
+        history.push('/todos');
+      }
+  }); //When the page is refreshed, Todos component will be loaded
 
   return (
     <div>

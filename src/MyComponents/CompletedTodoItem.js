@@ -29,11 +29,10 @@ export default function CompletedTodoItem({ todo, onDelete, onUndo}) { //this is
         <div className={classes.cards}>
             <Card className={classes.card}>
                 <Card.Body>
-                    <Card.Title>{todo.title}</Card.Title>
                     <Card.Text>{todo.desc}</Card.Text>
                     <div className={classes.btns}>
-                        <Button variant="primary" className="btn-sm" className={classes.btn} onClick={() =>{onUndo(todo)}}>Undo</Button>
-                        <Button variant="danger" className="btn-sm" className={classes.btn} onClick={() =>{onDelete(todo)}}>Delete</Button>
+                        <Button variant="primary" className={classes.btn} onClick={() =>{onUndo(todo)}}>Undo</Button>
+                        <Button variant="danger" className={classes.btn} onClick={() =>{onDelete(todo)}}>Delete</Button>
                     </div>
                 </Card.Body>
             </Card>
