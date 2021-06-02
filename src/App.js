@@ -126,7 +126,7 @@ function App() {
   return (
     <>
       <Router>
-        <Header todos={todos} onDelete={deleteTodo} onComplete={completedTodo}/>
+        <Header />
         <Switch>
           <Route exact path="/" render={() => {
             return (

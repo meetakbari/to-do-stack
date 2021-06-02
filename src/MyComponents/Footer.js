@@ -9,7 +9,7 @@ function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary">
             {'Copyright © '}
-            <Link color="inherit" href="https://github.com/meetakbari/to-do-stack" target="_blank">
+            <Link color="inherit" href="https://github.com/meetakbari/to-do-stack">
                 ToDoStack
       </Link>{' '}
             {new Date().getFullYear()}
@@ -47,7 +47,7 @@ export default function StickyFooter() {
             <CssBaseline />
             <footer className={classes.footer}>
                 <Container maxWidth="sm" className={classes.containerText}>
-                    <Typography variant="body1">Developed by <Link color="secondary" href="https://linktr.ee/meet_akbari" target="_blank">
+                    <Typography variant="body1">Developed by <Link color="secondary" href="https://linktr.ee/meet_akbari">
                     Meet Akbari
       </Link>{' '}</Typography>
                     <Copyright />
