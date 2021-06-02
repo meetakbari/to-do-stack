@@ -9,10 +9,11 @@ import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
 } from "react-router-dom";
 
 function App() {
+
   // for todos
   let initTodo;
   if (localStorage.getItem("todos") === null) {
@@ -104,6 +105,7 @@ function App() {
     setTodos([...todos, myTodo]);
   };
 
+  
   // state defined for all the todos
   const [todos, setTodos] = useState(initTodo);
 
@@ -113,6 +115,7 @@ function App() {
   // when todos are manipulated, useEffect will render the updated components.
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
+
   }, [todos])
 
   // when completed todos are manipulated, useEffect will render the updated components.
@@ -123,7 +126,7 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
+        <Header todos={todos} onDelete={deleteTodo} onComplete={completedTodo}/>
         <Switch>
           <Route exact path="/" render={() => {
             return (
@@ -147,7 +150,7 @@ function App() {
             return (
               <>
                 <Dashboard />
-                <CompletedTodos addedtodos={todos} todos={completed} onDelete={deleteCompletedTodo} onUndo={undoCompletedTodo} />
+                <CompletedTodos addedtodos={todos} todos={completed} onDeleteCompleted={deleteCompletedTodo} onUndo={undoCompletedTodo} />
               </>
             )
           }}>

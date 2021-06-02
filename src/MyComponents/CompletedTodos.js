@@ -12,7 +12,7 @@ export default function Todos(props) {
                     {props.todos.length === 0 ? <h5 className="m-5 text-danger">Hurry up...!</h5> :
                         <div className="d-flex flex-row justify-content-center flex-wrap">
                             {props.todos.map((todo) => {
-                                return <CompletedTodoItem todo={todo} key={todo.sno} onDelete={props.onDelete} onUndo={props.onUndo} />
+                                return <CompletedTodoItem todo={todo} key={todo.sno} onDeleteCompleted={props.onDeleteCompleted} onUndo={props.onUndo} />
                             })}
                         </div>
                     }

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     }));
 
-export default function CompletedTodoItem({ todo, onDelete, onUndo}) { //this is called the de-structuring 
+export default function CompletedTodoItem({ todo, onDeleteCompleted, onUndo}) { //this is called the de-structuring 
     const classes = useStyles();
 
     return (
@@ -32,7 +32,7 @@ export default function CompletedTodoItem({ todo, onDelete, onUndo}) { //this is
                     <Card.Text>{todo.desc}</Card.Text>
                     <div className={classes.btns}>
                         <Button variant="primary" className={classes.btn} onClick={() =>{onUndo(todo)}}>Undo</Button>
-                        <Button variant="danger" className={classes.btn} onClick={() =>{onDelete(todo)}}>Delete</Button>
+                        <Button variant="danger" className={classes.btn} onClick={() =>{onDeleteCompleted(todo)}}>Delete</Button>
                     </div>
                 </Card.Body>
             </Card>
