@@ -14,7 +14,7 @@ import {
 
 function App() {
 
-  // for todos
+    // for todos
   let initTodo;
   if (localStorage.getItem("todos") === null) {
     initTodo = [];
@@ -31,6 +31,20 @@ function App() {
   else {
     initCompletedTodo = JSON.parse(localStorage.getItem("completed"));
   }
+
+  // state defined for all the todos
+  const [todos, setTodos] = useState(initTodo);
+
+  // state defined for all the completed todos
+  const [completed, setCompleted] = useState(initCompletedTodo);
+
+  // when todos or completed todo are manipulated, useEffect will render the updated components.
+  useEffect(() => {
+    // console.log(window.location.pathname);
+    // if(todos.length === 0){
+    //   <Link to="/completed"></Link>
+    // }
+  }, [todos, completed]);
 
   // to delete the todo
   const deleteTodo = (todo) => {
@@ -70,13 +84,14 @@ function App() {
 
   // to move todo from todo window to completed window
   const completedTodo = (todo) => {
-    setCompleted([...completed, todo])
+    setCompleted([...completed, todo]);
     setTodos(
       todos.filter((e) => {
         return e !== todo;
       })
     );
     localStorage.setItem("todos", JSON.stringify(todos));
+    console.log(todos.length);
   }
 
   // to undo the completedTodo action
@@ -87,7 +102,7 @@ function App() {
       })
     );
     localStorage.setItem("completed", JSON.stringify(completed));
-    setTodos([...todos, todo]);
+    setTodos([todo, ...todos]);
   }
 
   // to add new todo
@@ -104,24 +119,6 @@ function App() {
     };
     setTodos([...todos, myTodo]);
   };
-
-  
-  // state defined for all the todos
-  const [todos, setTodos] = useState(initTodo);
-
-  // state defined for all the completed todos
-  const [completed, setCompleted] = useState(initCompletedTodo);
-
-  // when todos are manipulated, useEffect will render the updated components.
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-
-  }, [todos])
-
-  // when completed todos are manipulated, useEffect will render the updated components.
-  useEffect(() => {
-    localStorage.setItem("completed", JSON.stringify(completed));
-  }, [completed])
 
   return (
     <>
