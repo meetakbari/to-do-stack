@@ -20,11 +20,13 @@ export default function Todos(props) {
                         ?
                         <div>
                             {props.todos.filter((todo) => {
-                                if (searchWord === "") {
+                                
+                                if (todo.desc.toLowerCase().includes(searchWord.toLowerCase())) {
                                     return todo
-                                } else if (todo.desc.toLowerCase().includes(searchWord.toLowerCase())) {
+                                }else if(searchWord === ""){
                                     return todo
                                 }
+                                return ''
                             }).map((todo) => {
                                 return <TodoItem todo={todo} key={todo.sno} onDelete={props.onDelete} onComplete={props.onComplete} />
                             })
