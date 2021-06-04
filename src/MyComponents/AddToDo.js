@@ -16,7 +16,7 @@ export default function AddToDo({addTodo}) {
   }
   return (
     <div className="container-sm rounded-2 mt-5 mb-5 p-4" id="addTask">
-      <h4 className="mb-3">Add a To Do Task</h4>
+      <h4 className="mb-3">Add a To Do</h4>
       <Form onSubmit={submit}>
         <Form.Group controlId="formToDoDesc">
           <Form.Control

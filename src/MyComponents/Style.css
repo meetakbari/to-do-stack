@@ -1,3 +1,6 @@
+*{
+    font-family: 'Arvo', serif;
+}
 .card {
     display: flex;
     flex-wrap: wrap;
@@ -7,6 +10,9 @@
     -ms-word-break: break-all;
     word-break: break-all;
     height: fit-content;
+    font-size: 17px;
+    /* background-color: #faedcd; */
+    background-color: #efebce;
 }
 
 .btns {
@@ -22,6 +28,7 @@
 .searchBox {
     outline: none;
     border-radius: 5px;
+    border: 1px solid #0275d8;
 }
 
 .todos-container {
