@@ -6,13 +6,12 @@
     flex-wrap: wrap;
     width: 25vw;
     margin: 7px 10px;
-    border: 2px solid grey;
+    border: none;
     -ms-word-break: break-all;
     word-break: break-all;
     height: fit-content;
     font-size: 17px;
-    /* background-color: #faedcd; */
-    background-color: #efebce;
+    background-color: #e9ecef;
 }
 
 .btns {
