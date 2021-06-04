@@ -40,10 +40,8 @@ function App() {
 
   // when todos or completed todo are manipulated, useEffect will render the updated components.
   useEffect(() => {
-    // console.log(window.location.pathname);
-    // if(todos.length === 0){
-    //   <Link to="/completed"></Link>
-    // }
+    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem("completed", JSON.stringify(completed));
   }, [todos, completed]);
 
   // to delete the todo
